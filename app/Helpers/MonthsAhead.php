@@ -8,7 +8,8 @@ use App\Contracts\TimeAhead;
 |--------------------------------------------------------------------------
 */
 
-class MonthsAhead implements TimeAhead{
+class MonthsAhead implements TimeAhead
+{
     /**
      * returns the months ahead for specified number of iteration
      * @param int $iterations
@@ -18,7 +19,7 @@ class MonthsAhead implements TimeAhead{
     {
         $months = [];
 
-        for ($x=1; $x < ($iterations + 1); $x++) {
+        for ($x = 1; $x < ($iterations + 1); $x++) {
             $time = strtotime('+' . $x . ' months', strtotime(date('Y-M' . '-01')));
             $months[] = ['m' => date('m', $time), 'Y' => date('Y', $time)];
         }

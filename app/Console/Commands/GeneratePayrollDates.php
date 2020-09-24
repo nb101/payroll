@@ -62,7 +62,7 @@ class GeneratePayrollDates extends Command
     public function __construct(FileExporter $exporter, TimeAhead $months)
     {
         parent::__construct();
-        $this->exporter= $exporter;
+        $this->exporter = $exporter;
         $this->months = $months;
     }
 
@@ -82,14 +82,14 @@ class GeneratePayrollDates extends Command
             $bonus_day_calc = new BonusPayDayCalculator($payroll_month, $payroll_month::BONUS_PAYOUT_DAY);
             $pay_day_calc = new BasicPayDayCalculator($payroll_month);
 
-            $data[]= [
-                $month['m'] .'/' . $month['Y'],
+            $data[] = [
+                $month['m'] . '/' . $month['Y'],
                 $pay_day_calc->getBasicPayDay(),
                 $bonus_day_calc->getBonusPayoutDay()
             ];
         }
 
-       $path =  $this->exporter->outputFile($data, ['Period', 'Basic Payment', 'Bonus Payment'], 'Payroll.csv');
-       $this->line('File saved to: ' . $path);
+        $path =  $this->exporter->outputFile($data, ['Period', 'Basic Payment', 'Bonus Payment'], 'Payroll.csv');
+        $this->line('File saved to: ' . $path);
     }
 }

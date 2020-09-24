@@ -10,7 +10,8 @@ use App\Month;
 | If bonus day is on a weekday, it returns the friday of the week
 */
 
-class BonusPayDayCalculator {
+class BonusPayDayCalculator
+{
 
     /**
      * Create a new BonusPayDayCalculator instance.
@@ -20,8 +21,8 @@ class BonusPayDayCalculator {
      */
     public function __construct(Month $month, int $bonus_day)
     {
-        $this->bonus_day= $bonus_day;
-        $this->month= $month;
+        $this->bonus_day = $bonus_day;
+        $this->month = $month;
     }
 
 
@@ -43,8 +44,9 @@ class BonusPayDayCalculator {
     public function getBonusPayoutDay()
     {
         $y_m = $this->month->getYear() . '-' . $this->month->getMonth();
-        $bonus_day = strtotime($y_m .'-' . $this->bonus_day);
-        return (date('N', $bonus_day ) <= 5) ? $y_m.'-10' : date('Y-m-d', strtotime("next monday", $bonus_day));
+        $bonus_day = strtotime($y_m . '-' . $this->bonus_day);
+        return (date('N', $bonus_day ) <= 5) ? $y_m . '-10' :
+            date('Y-m-d', strtotime("next monday", $bonus_day));
     }
 
 }

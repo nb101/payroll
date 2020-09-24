@@ -18,7 +18,7 @@ class CsvExporter implements FileExporter
      * @param string $file_name
      * @return string
      */
-    public function outputFile(array $data,array $headers, string $file_name) : string
+    public function outputFile(array $data, array $headers, string $file_name) : string
     {
         $FH = fopen(storage_path($file_name), 'w');
         fputcsv($FH, $headers);

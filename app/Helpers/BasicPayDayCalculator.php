@@ -11,8 +11,8 @@ use App\Month;
 |
 */
 
-class BasicPayDayCalculator {
-
+class BasicPayDayCalculator
+{
     /**
      * Create a new BonusPayDayCalculator instance.
      * @param  Month  $month
@@ -37,6 +37,7 @@ class BasicPayDayCalculator {
     public function getBasicPayDay() : string
     {
         $last_day = $this->month->lastDay();
-        return (date('N', $last_day ) <= 5) ? date('Y-m-d', $last_day) : date('Y-m-d', strtotime("last friday", $last_day));
+        return (date('N', $last_day ) <= 5) ?
+            date('Y-m-d', $last_day) : date('Y-m-d', strtotime("last friday", $last_day));
     }
 }

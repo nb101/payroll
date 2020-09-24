@@ -12,5 +12,5 @@ namespace App\Contracts;
 
 interface FileExporter
 {
-    public function outputFile(array $data, array $headers, string $file_path)  : string ;
+    public function outputFile(array $data, array $headers, string $file_path)  : string;
 }

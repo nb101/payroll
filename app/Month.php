@@ -10,7 +10,7 @@ namespace App;
 class Month
 {
 
-    /**
+    /*
      * Create a new month instance.
      * @param string $month
      * @param string $current_year
@@ -18,7 +18,7 @@ class Month
      */
     public function __construct(string $month, string $current_year)
     {
-        $this->month= $month;
+        $this->month = $month;
         $this->current_year = $current_year;
     }
 
@@ -37,15 +37,17 @@ class Month
     /**
      * returns Last day of the month
      */
-    public function lastDay() : string {
-     return  strtotime($this->current_year . '-' . $this->month . '-' .
-         date('t',strtotime($this->current_year . '-' . $this->month . '-01')));
+    public function lastDay() : string
+    {
+        return  strtotime($this->current_year . '-' . $this->month . '-' .
+         date('t', strtotime($this->current_year . '-' . $this->month . '-01')));
     }
 
-    /**
+    /*
      * returns First day of the month
      */
-    public function firstDay() : string {
+    public function firstDay() : string
+    {
         return strtotime($this->current_year . '-' . $this->month . '-01');
     }
 

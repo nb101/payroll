@@ -11,8 +11,3 @@ To Use app
 
 you may need to change file permissions in storage folder. The command is stored in app/Console/Commands/GeneratePayrollDates.php
 
-
-## Please note
-I'm currently not proficient in writing Unit test. This is an area that I would like to learn and improve on.
-
- 
